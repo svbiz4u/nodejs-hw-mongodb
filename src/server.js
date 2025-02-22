@@ -72,8 +72,8 @@ import cors from 'cors';
 import pino from 'pino-http';
 
 import { getEnvVar } from './utils/getEnvVar.js';
-// import * as contactsServices from './services/contacts.js';
-import {getContacts, getContactById} from './services/contacts.js';
+import * as contactsServices from './services/contacts.js';
+// import {getContacts, getContactById} from './services/contacts.js';
 
 const logger = pino({
   transport: {
@@ -90,8 +90,8 @@ export const setupServer = () => {
   app.use(logger);
 
   app.get('/contacts', async (req, res) => {
-    // const data = await contactsServices.getContacts();
-    const data = await getContacts();
+    const data = await contactsServices.getContacts();
+    // const data = await getContacts();
 
 
     res.json({
@@ -103,8 +103,8 @@ export const setupServer = () => {
 
   app.get('/contacts/:contactId', async (req, res) => {
     const {contactId} = req.params;
-    // const data = await contactsServices.getContactById(contactId);
-    const data = await getContactById(contactId);
+    const data = await contactsServices.getContactById(contactId);
+    // const data = await getContactById(contactId);
 
 
     if(!data) {
