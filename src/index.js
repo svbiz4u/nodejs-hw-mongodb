@@ -1,14 +1,24 @@
-// src/index.js
+// // src/index.js
 
-const message = 'Hello world';
+// const message = 'Hello world';
 
-console.log(message);
+// console.log(message);
+// import { initMongoConnection } from './db/initMongoConnection.js';
+// import { startServer } from './server.js';
+
+// const bootstrap = async () => {
+//   await initMongoConnection();
+//   startServer();
+// };
+
+// bootstrap();
+
 import { initMongoConnection } from './db/initMongoConnection.js';
-import { startServer } from './server.js';
+import { setupServer } from './server.js';
 
-const bootstrap = async () => {
+const boostrap = async () => {
   await initMongoConnection();
-  startServer();
+  setupServer();
 };
 
-bootstrap();
+boostrap();
