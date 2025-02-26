@@ -23,8 +23,8 @@ contactsRouter.get('/:contactId', isValidId, ctrlWrapper(getContactByIdControlle
 
 contactsRouter.post('/', validateBody(contactAddSchema), ctrlWrapper(addContactController));
 
-contactsRouter.patch('/:contactId',isValidId, validateBody(contactUpdateSchema), ctrlWrapper(updateContactController));
+contactsRouter.patch('/:contactId', isValidId, validateBody(contactUpdateSchema), ctrlWrapper(updateContactController));
 
-contactsRouter.delete('/:contactId',isValidId, ctrlWrapper(deleteContactController));
+contactsRouter.delete('/:contactId', isValidId, ctrlWrapper(deleteContactController));
 
 export default contactsRouter;
