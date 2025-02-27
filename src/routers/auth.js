@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
-import * as authControllers from '../controllers/auth.js';
+// import * as authControllers from '../controllers/auth.js';
+import { loginController, logoutController, refreshSessionController, registerController } from '../controllers/auth.js';
 
 import { validateBody } from '../middlewares/validateBody.js';
 
@@ -13,20 +14,20 @@ const authRouter = Router();
 authRouter.post(
   '/register',
   validateBody(userRegisterSchema),
-  ctrlWrapper(authControllers.registerController),
+  ctrlWrapper(registerController),
 );
 
 authRouter.post(
   '/login',
   validateBody(userLoginSchema),
-  ctrlWrapper(authControllers.loginController),
+  ctrlWrapper(loginController),
 );
 
 authRouter.post(
   '/refresh',
-  ctrlWrapper(authControllers.refreshSessionController),
+  ctrlWrapper(refreshSessionController),
 );
 
-authRouter.post('/logout', ctrlWrapper(authControllers.logoutController));
+authRouter.post('/logout', ctrlWrapper(logoutController));
 
 export default authRouter;

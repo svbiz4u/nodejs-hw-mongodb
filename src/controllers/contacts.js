@@ -1,7 +1,7 @@
 import createHttpError from 'http-errors';
 
 // import { addContact, deleteContactById, getContactById, getContacts, updateContactById } from '../services/contacts.js';
-import { addContact, deleteContact, getContact,  getContacts, updateContactById } from '../services/contacts.js';
+import { addContact, deleteContact, getContact,  getContacts, updateContact } from '../services/contacts.js';
 
 
 import { parsePaginationParams } from '../utils/parsePaginationParams.js';
