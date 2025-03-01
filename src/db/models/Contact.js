@@ -31,6 +31,7 @@ const contactSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'user',
     },
+    photo: { type: String },
   },
   { versionKey: false, timestamps: true },
 );
@@ -40,6 +41,5 @@ contactSchema.post('save', handleSaveError);
 contactSchema.pre('findOneAndUpdate', setUpdateSettings);
 
 contactSchema.post('findOneAndUpdate', handleSaveError);
-
 
 export const ContactCollection = model('contact', contactSchema);

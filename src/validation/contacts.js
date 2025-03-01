@@ -4,18 +4,11 @@ import { contactTypeList, phoneNumberRegExp } from '../constants/contacts.js';
 
 export const contactAddSchema = Joi.object({
   name: Joi.string().min(3).max(20).required().messages({
-    // 'string.base': 'Username should be a string',
-    // 'string.min': 'Username should have at least {#limit} characters',
-    // 'string.max': 'Username should have at most {#limit} characters',
-    // 'any.required': 'Username is required',
-
     'string.base': 'Name should be a string',
     'string.min': 'Name should have at least {#limit} characters',
     'string.max': 'Name should have at most {#limit} characters',
     'any.required': 'Name is required',
-
-
-    
+   
   }),
   phoneNumber: Joi.string().pattern(phoneNumberRegExp).required().messages({
     'string.pattern.base':
@@ -28,10 +21,6 @@ export const contactAddSchema = Joi.object({
 
 export const contactUpdateSchema = Joi.object({
   name: Joi.string().min(3).max(20).messages({
-    // 'string.base': 'Username should be a string',
-    // 'string.min': 'Username should have at least {#limit} characters',
-    // 'string.max': 'Username should have at most {#limit} characters',
-    // 'any.required': 'Username is required',
     'string.base': 'Name should be a string',
     'string.min': 'Name should have at least {#limit} characters',
     'string.max': 'Name should have at most {#limit} characters',

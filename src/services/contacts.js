@@ -41,7 +41,7 @@ return {
 };
 };
 
-export const getContactById = (id) => ContactCollection.findById(id);
+// export const getContactById = (id) => ContactCollection.findById(id);
 
 export const getContact = (filter) => ContactCollection.findOne(filter);
 
