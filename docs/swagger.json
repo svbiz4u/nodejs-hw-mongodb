@@ -399,10 +399,7 @@
             }
           ],
           "parameters": [
-            {
-              "in": "path",
-              "name": "",
-            }
+            
           ],
           "requestBody": {
             "content": {
