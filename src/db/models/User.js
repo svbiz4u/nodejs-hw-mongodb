@@ -5,7 +5,6 @@ import { handleSaveError, setUpdateSettings } from './hooks.js';
 
 const userSchema = new Schema(
   {
-    // username: {
     name: {
       type: String,
       required: true,
