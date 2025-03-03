@@ -399,6 +399,16 @@
             }
           ],
           "parameters": [
+          {
+            "in": "path",
+            "name": "contactId",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "67c43b0f001589eb384096ca"
+            }
+          }
+
             
           ],
           "requestBody": {
